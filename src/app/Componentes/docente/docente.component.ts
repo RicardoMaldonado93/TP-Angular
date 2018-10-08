@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IDocente } from '../../Interfaces/idocente';
 
 @Component({
   selector: 'app-docente',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocenteComponent implements OnInit {
 
+  @Input() unDocente : IDocente;
+  
   constructor() { }
 
   ngOnInit() {
