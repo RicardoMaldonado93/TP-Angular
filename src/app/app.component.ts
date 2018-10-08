@@ -3,6 +3,7 @@ import { IAlumno } from './Interfaces/ialumno';
 import { IDocente } from './Interfaces/idocente';
 import { ICurso } from './Interfaces/icurso';
 import { EnumEstado } from './Enums/enum-estado.enum';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -16,8 +17,8 @@ export class AppComponent {
   public unAlumno:IAlumno;
   public unDocente:IDocente;
   public unCurso:ICurso;
-   DI:Date = new Date('20/10/2018');
-   DF:Date = new Date('08/12/2018');
+  public DI:DatePipe = new DatePipe('20/10/2018');
+   DF:DatePipe = new DatePipe('08/12/2018');
 
   constructor(){
     this.unAlumno = { nombre: "Ricardo", 
@@ -34,9 +35,9 @@ export class AppComponent {
 
     this.unCurso = {  id: 21354351,
                         curso:'Angular',
-                        inicio : this.DI,
-                        finalizacion: this.DF,
-                        estado:EnumEstado.iniciado,
+                        inicio : new Date('01/10/2018'),
+                        finalizacion: new Date('01/11/2018'),
+                        estado:EnumEstado.Iniciado,
                         profesor:'Alejandro'
                       };
         

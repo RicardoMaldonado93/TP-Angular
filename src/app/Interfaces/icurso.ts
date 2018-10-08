@@ -1,4 +1,5 @@
 import {EnumEstado} from "../Enums/enum-estado.enum";
+import { DatePipe } from "@angular/common";
 
 export interface ICurso {
 

@@ -1,8 +1,10 @@
 <p>
     ID: {{unCurso.id}} <br>
     Curso: {{unCurso.curso}}<br>
-    Fecha de Inicio: {{unCurso.inicio}}<br>
-    Fecha de finalizacion: {{unCurso.finalizacion}}<br>
-    Estado: {{unCurso.estado}}
+    Fecha de Inicio: {{unCurso.inicio | date : 'dd/mm/yy'}}<br>
+    Fecha de finalizacion: {{unCurso.finalizacion | date : 'dd/mm/yy' }}<br>
+    Estado: <select ([ngModel]) = 'unCurso.estado'>
+      <option>{{unCurso.estado}}</option> -->
+    </select>`
   </p>
   

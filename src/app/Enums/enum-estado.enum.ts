@@ -1,5 +1,5 @@
 export enum EnumEstado {
-    iniciado,
-    cursando,
-    finalizado
+    'Iniciado',
+    'Cursando',
+    'Finalizado'
 }
