@@ -45,8 +45,5 @@ export class AppComponent {
         
   }
 
-  public cambioEstado($value:EnumEstado){
-    this.unCurso.estado = $value;
-    console.log(this.unCurso.estado);
-  }
+
 }

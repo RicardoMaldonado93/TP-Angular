@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { ICurso } from '../../Interfaces/icurso';
 import { EnumEstado } from '../../Enums/enum-estado.enum';
 
@@ -10,10 +10,11 @@ import { EnumEstado } from '../../Enums/enum-estado.enum';
 export class CursoComponent implements OnInit {
 
   @Input() unCurso : ICurso;
-  @Output() cambiarEstado : EventEmitter<number>;
+  @Output() cambiarEstado : EventEmitter<EnumEstado>;
+  @HostBinding('style.color') isActive : string;
 
   constructor() { 
-    this.cambiarEstado = new EventEmitter<number>();
+    this.cambiarEstado = new EventEmitter<EnumEstado>();
   }
 
   ngOnInit() {
@@ -21,5 +22,8 @@ export class CursoComponent implements OnInit {
 
   Onclick($value:EnumEstado){
     this.unCurso.estado = $value;
+    //this.unCurso.estado = this.cambiarEstado.emit($value);
+    
+    console.log(this.unCurso.estado + $value);
   }
 }
