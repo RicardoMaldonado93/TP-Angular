@@ -1,5 +1,5 @@
 export enum EnumEstado {
-    'Iniciado',
-    'Cursando',
-    'Finalizado'
+    Pendiente = 'Pendiente',
+    Activo = 'Activo',
+    Inactivo = 'Inactivo'
 }

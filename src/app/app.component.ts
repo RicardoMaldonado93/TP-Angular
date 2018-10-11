@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { IAlumno } from './Interfaces/ialumno';
 import { IDocente } from './Interfaces/idocente';
 import { ICurso } from './Interfaces/icurso';
@@ -11,16 +11,18 @@ import { DatePipe } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'TP-Angular';
 
   public unAlumno:IAlumno;
   public unDocente:IDocente;
   public unCurso:ICurso;
-  public DI:DatePipe = new DatePipe('20/10/2018');
-   DF:DatePipe = new DatePipe('08/12/2018');
+
 
   constructor(){
+
+
     this.unAlumno = { nombre: "Ricardo", 
                       apellido:"Maldonado", 
                       dni: 37682324, 
@@ -37,9 +39,14 @@ export class AppComponent {
                         curso:'Angular',
                         inicio : new Date('01/10/2018'),
                         finalizacion: new Date('01/11/2018'),
-                        estado:EnumEstado.Iniciado,
+                        estado:EnumEstado.Activo,
                         profesor:'Alejandro'
                       };
         
+  }
+
+  public cambioEstado($value:EnumEstado){
+    this.unCurso.estado = $value;
+    console.log(this.unCurso.estado);
   }
 }

@@ -1,10 +1,14 @@
-<p>
-    ID: {{unCurso.id}} <br>
-    Curso: {{unCurso.curso}}<br>
-    Fecha de Inicio: {{unCurso.inicio | date : 'dd/mm/yy'}}<br>
-    Fecha de finalizacion: {{unCurso.finalizacion | date : 'dd/mm/yy' }}<br>
-    Estado: <select ([ngModel]) = 'unCurso.estado'>
-      <option>{{unCurso.estado}}</option> -->
-    </select>`
-  </p>
+  <div class= 'card' style="height:145px;">
+    <div class = 'card-header bg-ligth'><h2>{{unCurso.curso}}</h2></div>
+    <div class='card-body'>
+      <li>ID: {{unCurso.id}} </li>
+      <li>Fecha de Inicio: {{unCurso.inicio | date : 'dd/mm/yy'}}</li>
+      <li>Fecha de finalizacion: {{unCurso.finalizacion | date : 'dd/mm/yy' }}</li>
+      <li>Estado: <select style="height:25px;"  (change) = 'Onclick($event.target.value);'>
+                  <option [value] = 1 >Activo</option>
+                  <option [value] = 2 >Inactivo</option>
+                  <option [value] = 3 >Pendiente</option>
+              </select></li>
+    </div>
+</div>
   
