@@ -43,7 +43,11 @@ export class AppComponent {
                         profesor:'Alejandro'
                       };
         
+
   }
 
+  MostrarMensaje(message:string):void{
+    console.log(message);
+  }
 
 }

@@ -8,5 +8,5 @@
 <div class="card-columns">
   <app-alumno [unAlumno] = "unAlumno" ></app-alumno>
   <app-docente [unDocente] = "unDocente"></app-docente>
-  <app-curso [unCurso] = "unCurso"></app-curso>
+  <app-curso (actualizarEstado)='MostrarMensaje($event)'[unCurso] = "unCurso"></app-curso>
 </div>

@@ -10,27 +10,33 @@ import { EnumEstado } from '../../Enums/enum-estado.enum';
 export class CursoComponent implements OnInit {
 
   @Input() unCurso : ICurso;
-  @Output() cambiarEstado : EventEmitter<EnumEstado>;
-  //@HostBinding('style.color') isActive : string;
+  //@Output() cambiarEstado : EventEmitter<EnumEstado> = new EventEmitter<EnumEstado>();
+  @Output() actualizarEstado : EventEmitter<EnumEstado> = new EventEmitter<EnumEstado>();
   @HostBinding('style.color') cardColor : string;
 
   constructor() { 
-    this.cambiarEstado = new EventEmitter<EnumEstado>();
+   //this.cambiarEstado = new EventEmitter<EnumEstado>();
   }
 
   ngOnInit() {
   }
 
-  Onclick($value:EnumEstado){
+  /*Onclick($value){
     //this.unCurso.estado = $value;
     this.cambiarEstado.emit(this.unCurso.estado = $value);
+    
 
-    if (this.unCurso.estado == 2){
+    /*if (this.unCurso.estado == 2){
       this.cardColor = 'red';
     }
 
     if !(this.unCurso.estado == 2){
       this.cardColor = 'black';
     }
+
+    console.log(this.unCurso.estado);
+  }*/
+  Onclick($value){
+    this.actualizarEstado.emit($value);
   }
 }
