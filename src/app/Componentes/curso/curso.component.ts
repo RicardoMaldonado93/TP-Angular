@@ -11,7 +11,8 @@ export class CursoComponent implements OnInit {
 
   @Input() unCurso : ICurso;
   @Output() cambiarEstado : EventEmitter<EnumEstado>;
-  @HostBinding('style.color') isActive : string;
+  //@HostBinding('style.color') isActive : string;
+  @HostBinding('style.color') cardColor : string;
 
   constructor() { 
     this.cambiarEstado = new EventEmitter<EnumEstado>();
@@ -21,9 +22,15 @@ export class CursoComponent implements OnInit {
   }
 
   Onclick($value:EnumEstado){
-    this.unCurso.estado = $value;
-    //this.unCurso.estado = this.cambiarEstado.emit($value);
-    
-    console.log(this.unCurso.estado + $value);
+    //this.unCurso.estado = $value;
+    this.cambiarEstado.emit(this.unCurso.estado = $value);
+
+    if (this.unCurso.estado == 2){
+      this.cardColor = 'red';
+    }
+
+    if !(this.unCurso.estado == 2){
+      this.cardColor = 'black';
+    }
   }
 }
