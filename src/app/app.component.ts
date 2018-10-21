@@ -46,8 +46,8 @@ export class AppComponent {
 
   }
 
-  MostrarMensaje(message:string):void{
-    console.log(message);
+  ActualizarEstado(estado:EnumEstado):void{
+    this.unCurso.estado = estado;
   }
 
 }
