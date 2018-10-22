@@ -27,5 +27,6 @@ export class CursoComponent{
       this.cardHeaderColor = false;
     }
     
+    //asdasdasd
   }
 }
