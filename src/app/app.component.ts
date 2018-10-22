@@ -42,4 +42,8 @@ export class AppComponent {
                       };
         
   }
+
+  public actualizarEstado($event):void {
+    this.unCurso.estado = <EnumEstado>$event;
+  }
 }
