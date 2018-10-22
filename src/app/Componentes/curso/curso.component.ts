@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { ICurso } from '../../Interfaces/icurso';
 import { EnumEstado } from '../../Enums/enum-estado.enum';
 
@@ -6,28 +6,26 @@ import { EnumEstado } from '../../Enums/enum-estado.enum';
   selector: 'app-curso',
   templateUrl: './curso.component.html',
   styleUrls: ['./curso.component.css']
+  
 })
-export class CursoComponent implements OnInit {
+export class CursoComponent{
 
   @Input() unCurso : ICurso;
   @Output() actualizarEstado : EventEmitter<EnumEstado> = new EventEmitter<EnumEstado>();
-  @HostBinding('style.color') cardColor : string;
-
+  @HostBinding('class.titulo') cardHeaderColor : Boolean = false;
+  
   constructor() { 
-   //this.cambiarEstado = new EventEmitter<EnumEstado>();
-  }
-
-  ngOnInit() {
   }
 
   Onclick($value){
     this.actualizarEstado.emit($value);
     if($value == 2 ){
-      this.cardColor = 'red';
+      this.cardHeaderColor = true ;
     }
 
-    if!($value == 2){
-      this.cardColor = 'black';
+    if($value != 2 ){
+      this.cardHeaderColor = false;
     }
+    
   }
 }

@@ -48,6 +48,7 @@ export class AppComponent {
 
   ActualizarEstado(estado:EnumEstado):void{
     this.unCurso.estado = estado;
+    console.log("Estado del Curso: "+ estado );
   }
 
 }
