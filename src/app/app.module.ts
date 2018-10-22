@@ -2,19 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AlumnoComponent } from './Componentes/alumno/alumno.component';
-import { CursoComponent } from './Componentes/curso/curso.component';
-import { DocenteComponent } from './Componentes/docente/docente.component';
+import { AlumnoComponent } from    './shared/alumno/alumno.component';
+import { CursoComponent } from './MCurso/modulo-curso/curso/curso.component';
+import { DocenteComponent } from './shared/docente/docente.component';
+import { ListadoCursoComponent } from './MCurso/modulo-curso/listado-curso/listado-curso.component';
+
+//import { modulo } from './MCurso/modulo-curso/modulo-curso.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlumnoComponent,
     CursoComponent,
-    DocenteComponent
+    DocenteComponent,
+    ListadoCursoComponent,
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

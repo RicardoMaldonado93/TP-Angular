@@ -3,10 +3,11 @@
   <h1>
     {{ title }}!
   </h1>
-  
-    <app-alumno [unAlumno] = "unAlumno" ></app-alumno>
-    <app-docente [unDocente] = "unDocente"></app-docente>
-    <app-curso [unCurso] = "unCurso"></app-curso>
-  
-</div>
 
+</div>
+<br>
+<div class="card-columns">
+  <app-alumno [unAlumno] = "unAlumno" ></app-alumno> 
+  <app-docente [unDocente] = "unDocente"></app-docente> 
+  <app-curso (actualizarEstado)='ActualizarEstado($event)'[unCurso] = "unCurso"></app-curso> 
+</div>

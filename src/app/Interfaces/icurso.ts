@@ -9,4 +9,14 @@ export interface ICurso {
     finalizacion: Date;
     estado:EnumEstado;
     profesor:string;
-}
+}/*
+interface RootObject {
+  id: number;
+  titulo: string;
+  fechaInicio: number;
+  fechaFin: number;
+  asistentes: string[];
+  profesor: string[];
+  laboratorio: number;
+  estado: number;
+}*/

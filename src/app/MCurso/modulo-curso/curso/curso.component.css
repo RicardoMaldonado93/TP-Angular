@@ -1,0 +1,6 @@
+:host(.titulo){
+                color: #EA0000;
+}  
+:host(.tituloPendiente){
+    color: #EA9C00;
+}  
