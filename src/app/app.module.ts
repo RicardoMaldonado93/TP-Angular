@@ -7,16 +7,19 @@ import { CursoComponent } from './MCurso/modulo-curso/curso/curso.component';
 import { DocenteComponent } from './shared/docente/docente.component';
 import { ListadoCursoComponent } from './MCurso/modulo-curso/listado-curso/listado-curso.component';
 
+import {modulo} from './MCurso/modulo-curso/modulo-curso.module';
+
 @NgModule({
   declarations: [
     AppComponent,
     AlumnoComponent,
     CursoComponent,
     DocenteComponent,
-    ListadoCursoComponent
+    ListadoCursoComponent,
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
