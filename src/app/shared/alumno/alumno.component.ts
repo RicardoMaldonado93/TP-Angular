@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IAlumno } from '../../Interfaces/ialumno';
+import { IAlumno } from '../../model/interfaces/ialumno';
 @Component({
   selector: 'app-alumno',
   templateUrl: './alumno.component.html',
