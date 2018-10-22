@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, HostBinding } from '@angular/core';
-import { ICurso } from '../../../model/interfaces/icurso';
-import { EnumEstado } from '../../../model/enums/enum-estado.enum';
+import { ICurso } from '../../model/interfaces/icurso';
+import { EnumEstado } from '../../model/enums/enum-estado.enum';
 
 @Component({
   selector: 'app-curso',

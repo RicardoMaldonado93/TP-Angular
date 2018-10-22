@@ -1,8 +1,8 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { IAlumno } from './Interfaces/ialumno';
-import { IDocente } from './Interfaces/idocente';
-import { ICurso } from './Interfaces/icurso';
-import { EnumEstado } from './Enums/enum-estado.enum';
+import { IAlumno } from './model/interfaces/ialumno';
+import { IDocente } from './model/interfaces/idocente';
+import { ICurso } from './model/interfaces/icurso';
+import { EnumEstado } from './model/enums/enum-estado.enum';
 import { DatePipe } from '@angular/common';
 
 
