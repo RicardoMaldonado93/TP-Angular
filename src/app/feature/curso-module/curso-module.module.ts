@@ -1,10 +1,16 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Input ,Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { cursoItem } from '../curso-item/curso-item.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
   ],
-  declarations: []
+  declarations: [ cursoItem ],
+
+  exports : [ cursoItem ]
 })
-export class CursoModuleModule { }
+export class CursoModuleModule { 
+  
+}

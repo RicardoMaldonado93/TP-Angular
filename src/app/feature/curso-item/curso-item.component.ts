@@ -3,9 +3,9 @@ import { ICurso } from '../../model/interfaces/icurso';
 import { EnumEstado } from '../../model/enums/enum-estado.enum';
 
 @Component({
-  selector: 'app-curso',
-  templateUrl: './curso.component.html',
-  styleUrls: ['./curso.component.css']
+  selector: 'app-curso-item',
+  templateUrl: './curso-item.component.html',
+  styleUrls: ['./curso-item.component.css']
   
 })
 export class CursoComponent{
