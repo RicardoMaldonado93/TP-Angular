@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { curso } from '../curso/curso.component';
 
 @Component({
   selector: 'app-listado-curso',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listado-curso.component.css']
 })
 export class ListadoCursoComponent implements OnInit {
+
+  @Output() ListaCursos: Array<curso> ;
 
   constructor() { }
 
