@@ -9,6 +9,7 @@
 <div class="card-columns">
   <app-alumno [unAlumno] = "unAlumno" ></app-alumno> 
   <app-docente [unDocente] = "unDocente"></app-docente> 
-  <app-curso-item (actualizarEstado)='ActualizarEstado($event)'[unCurso] = "unCurso"></app-curso-item> 
+ <!--<app-curso-item (actualizarEstado)='ActualizarEstado($event)'[unCurso] = "unCurso"></app-curso-item> -->
+ <app-listado-curso [ListaCursos] = 'ListaCursos'></app-listado-curso> 
   <!-- <router-outlet></router-outlet> -->
 </div>

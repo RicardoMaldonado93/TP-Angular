@@ -4,6 +4,8 @@ import { IDocente } from './model/interfaces/idocente';
 import { ICurso } from './model/interfaces/icurso';
 import { EnumEstado } from './model/enums/enum-estado.enum';
 import { DatePipe } from '@angular/common';
+import { CursoComponent } from './feature/curso-item/curso-item.component';
+import { CursoModuleModule } from './feature/curso-module/curso-module.module'
 
 
 @Component({
@@ -19,6 +21,7 @@ export class AppComponent {
   public unDocente:IDocente;
   public unCurso:ICurso;
 
+  
 
   constructor(){
 
@@ -43,7 +46,8 @@ export class AppComponent {
                         profesor:'Alejandro'
                       };
         
-
+                      
+                      
   }
 
   ActualizarEstado(estado:EnumEstado):void{

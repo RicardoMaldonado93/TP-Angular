@@ -7,7 +7,6 @@ import { CursoComponent } from './feature/curso-item/curso-item.component';
 import { DocenteComponent } from './shared/docente/docente.component';
 import { ListadoCursoComponent } from './feature/listado-curso/listado-curso.component';
 
-//import { modulo } from './MCurso/modulo-curso/modulo-curso.module';
 
 @NgModule({
   declarations: [
