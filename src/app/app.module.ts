@@ -5,20 +5,21 @@ import { AppComponent } from './app.component';
 import { AlumnoComponent } from    './shared/alumno/alumno.component';
 import { CursoComponent } from './feature/curso-item/curso-item.component';
 import { DocenteComponent } from './shared/docente/docente.component';
-import { ListadoCursoComponent } from './feature/listado-curso/listado-curso.component';
+import { CursoModuleModule } from './feature/curso-module/curso-module.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AlumnoComponent,
-    CursoComponent,
+ //   CursoComponent,
     DocenteComponent,
-    ListadoCursoComponent,
+    
     
   ],
   imports: [
     BrowserModule,
+    CursoModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

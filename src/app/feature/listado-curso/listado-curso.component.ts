@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, Input } from '@angular/core';
 import { CursoComponent } from '../curso-item/curso-item.component';
 import { EventEmitter } from 'events';
+import { ICurso } from '../../model/interfaces/icurso';
 
 @Component({
   selector: 'app-listado-curso',
@@ -9,8 +10,8 @@ import { EventEmitter } from 'events';
 })
 export class ListadoCursoComponent implements OnInit {
 
-  @Input() ListaCursos: Array<CursoComponent>;
- //@Output() MostrarLista: EventEmitter<CursoComponent> = new EventEmitter<CursoComponent>;
+  @Input() ListaCursos: Array<ICurso>;
+  @Output() mostrarLista:Array<CursoComponent> = [];
   constructor() {
       this.ListaCursos = [];
    }
