@@ -4,8 +4,10 @@ import { IDocente } from './model/interfaces/idocente';
 import { ICurso } from './model/interfaces/icurso';
 import { EnumEstado } from './model/enums/enum-estado.enum';
 import { DatePipe } from '@angular/common';
-import { CursoComponent } from './feature/curso-item/curso-item.component';
+//import { ListadoCursoComponent } from './feature/curso-item/curso-item.component';
 import { CursoModuleModule } from './feature/curso-module/curso-module.module'
+import { ListadoCursoComponent } from './feature/listado-curso/listado-curso.component';
+import { CursoComponent } from './feature/curso-item/curso-item.component';
 
 
 @Component({
@@ -20,7 +22,7 @@ export class AppComponent {
   public unAlumno:IAlumno;
   public unDocente:IDocente;
   public unCurso:ICurso;
-
+  public List: ListadoCursoComponent = new ListadoCursoComponent();
   
 
   constructor(){
@@ -45,6 +47,10 @@ export class AppComponent {
                         estado:EnumEstado.Activo,
                         profesor:'Alejandro'
                       };
+
+        this.List.ListaCursos.push(this.unCurso);  
+    
+       this.List.MostrarCursos();
         
                       
                       
