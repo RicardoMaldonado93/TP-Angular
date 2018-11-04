@@ -10,8 +10,7 @@ import { ICurso } from '../../model/interfaces/icurso';
 })
 export class ListadoCursoComponent implements OnInit {
 
-  @Input() ListaCursos: Array<ICurso>;
-  @Output() mostrarLista:Array<CursoComponent> = [];
+  @Output() ListaCursos: Array<ICurso>;
   constructor() {
       this.ListaCursos = [];
    }

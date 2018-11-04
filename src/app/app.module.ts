@@ -6,20 +6,18 @@ import { AlumnoComponent } from    './shared/alumno/alumno.component';
 import { CursoComponent } from './feature/curso-item/curso-item.component';
 import { DocenteComponent } from './shared/docente/docente.component';
 import { CursoModuleModule } from './feature/curso-module/curso-module.module';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlumnoComponent,
- //   CursoComponent,
-    DocenteComponent,
-    
-    
+    AlumnoComponent
+  
   ],
   imports: [
     BrowserModule,
-    CursoModuleModule
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

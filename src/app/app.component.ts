@@ -6,6 +6,7 @@ import { EnumEstado } from './model/enums/enum-estado.enum';
 import { DatePipe } from '@angular/common';
 import { CursoComponent } from './feature/curso-item/curso-item.component';
 import { CursoModuleModule } from './feature/curso-module/curso-module.module'
+import { ListadoCursoComponent } from './feature/listado-curso/listado-curso.component';
 
 
 @Component({
@@ -46,7 +47,7 @@ export class AppComponent {
                         profesor:'Alejandro'
                       };
         
-                      
+                      console.log(ListadoCursoComponent);
                       
   }
 
