@@ -9,6 +9,7 @@ import { CursoComponent } from './feature/curso-item/curso-item.component';
 
 import { AppRoutesModule } from './app-routes.module';
 import { MenuComponent } from './core/menu/menu.component';
+import { DocenteComponent } from './shared/docente/docente.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { MenuComponent } from './core/menu/menu.component';
     AppComponent,  
     AlumnoComponent,
     ListadoCursoComponent,
+    DocenteComponent,
     CursoComponent,
     MenuComponent
   ],
