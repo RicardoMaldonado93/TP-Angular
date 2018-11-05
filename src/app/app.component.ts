@@ -8,6 +8,7 @@ import { DatePipe } from '@angular/common';
 import { CursoModuleModule } from './feature/curso-module/curso-module.module'
 import { ListadoCursoComponent } from './feature/listado-curso/listado-curso.component';
 import { CursoComponent } from './feature/curso-item/curso-item.component';
+import { CursoService } from './core/service/curso.service';
 
 
 @Component({
@@ -22,39 +23,24 @@ export class AppComponent {
   public unAlumno:IAlumno;
   public unDocente:IDocente;
   public unCurso:ICurso;
-  public List: ListadoCursoComponent = new ListadoCursoComponent();
+  //public List: ListadoCursoComponent = new ListadoCursoComponent();
   
 
-  constructor(){
+  constructor( private http:CursoService ){
 
 
-    this.unAlumno = { nombre: "Ricardo", 
-                      apellido:"Maldonado", 
-                      dni: 37682324, 
-                      legajo: 101169, 
-                      curso:"Angular" };
 
-    this.unDocente = { nombre : 'Raul', 
-                       apellido : 'Mendez',
-                       curso : 'Matematica',
-                       turno : 'Mañana'
-                      };
-
-    this.unCurso = {  id: 21354351,
-                        curso:'Angular',
-                        inicio : new Date('01/10/2018'),
-                        finalizacion: new Date('01/11/2018'),
-                        estado:EnumEstado.Activo,
-                        profesor:'Alejandro'
-                      };
-
-      this.List.ListaCursos.push(this.unCurso);  
+     // this.List.ListaCursos.push(this.unCurso);  
     
-      this.List.MostrarCursos();
+      //this.Lis.MostrarCursos();
         
                
   }
-
+ ngOnInit(){
+       
+    this.http.getData().subscribe( data => {console.log( data)});
+ }
+ 
   ActualizarEstado(estado:EnumEstado):void{
     this.unCurso.estado = estado;
     //console.log("Estado del Curso: "+ estado );

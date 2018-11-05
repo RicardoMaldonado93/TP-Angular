@@ -2,6 +2,7 @@ import { Component, OnInit, Output, Input , ViewChild} from '@angular/core';
 import { CursoComponent } from '../curso-item/curso-item.component';
 import { EventEmitter } from 'events';
 import { ICurso } from '../../model/interfaces/icurso';
+import { CursoService } from '../../core/service/curso.service';
 
 @Component({
   selector: 'app-listado-curso',
@@ -12,15 +13,16 @@ export class ListadoCursoComponent implements OnInit {
 
   @Input() ListaCursos: Array<ICurso>;
   @Output() lista:Array<ICurso> = [];
+  recurso;
   
   @ViewChild(CursoComponent)  hijo:CursoComponent;
 
-  constructor() {
+  constructor(private service:CursoService) {
       this.ListaCursos = [];
    }
 
   ngOnInit() {
-    this.lista =  this.ListaCursos;
+    this.service.getData().subscribe( data =>{ this.recurso=console.log(data)})
   }
   
   MostrarCursos() {
