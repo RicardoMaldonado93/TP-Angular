@@ -1,9 +1,9 @@
   <div class= 'card' style="height:145px;">
-    <div class ='card-header bg-light' ><h2>{{unCurso.curso}}</h2></div>
+    <div class ='card-header bg-light' ><h2>{{curso}}</h2></div>
     <div class='card-body'>
-      <li>ID: {{unCurso.id}} </li>
-      <li>Fecha de Inicio: {{unCurso.inicio | date : 'dd/mm/yy'}}</li>
-      <li>Fecha de finalizacion: {{unCurso.finalizacion | date : 'dd/mm/yy' }}</li>
+      <li>ID: {{id}} </li>
+      <li>Fecha de Inicio: {{inicio | date : 'dd/mm/yy'}}</li>
+      <li>Fecha de finalizacion: {{finalizacion | date : 'dd/mm/yy' }}</li>
       <li>Estado: <select style="height:25px;" (change) = 'Onclick($event.target.value);'>
                   <option [value] = 1 >Activo</option>
                   <option [value] = 2 >Inactivo</option>

@@ -1,16 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    {{ title }}!
-  </h1>
 
-</div>
-<br>
-<div class="card-columns">
-  <!--<app-alumno [unAlumno] = "unAlumno" ></app-alumno> 
-  <app-docente [unDocente] = "unDocente"></app-docente> 
-  <app-curso-item (actualizarEstado)='ActualizarEstado($event)'[unCurso] = "unCurso"></app-curso-item>
- <app-listado-curso ></app-listado-curso> 
-   <router-outlet></router-outlet> -->
-   <router-outlet></router-outlet>
+<app-menu></app-menu>
+
+<div class="container">
+    <div class="card-columns">
+      <router-outlet></router-outlet>
+    </div>
 </div>

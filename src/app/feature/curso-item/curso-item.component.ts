@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { ICurso } from '../../model/interfaces/icurso';
 import { EnumEstado } from '../../model/enums/enum-estado.enum';
-
+ 
 @Component({
   selector: 'app-curso-item',
   templateUrl: './curso-item.component.html',
@@ -15,6 +15,7 @@ export class CursoComponent{
   @HostBinding('class.titulo') cardHeaderColor : Boolean = false;
   
   constructor() { 
+  
   }
 
   Onclick($value){

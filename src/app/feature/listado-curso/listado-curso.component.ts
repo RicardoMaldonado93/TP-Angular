@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
+import { Component, OnInit, Output, Input , ViewChild} from '@angular/core';
 import { CursoComponent } from '../curso-item/curso-item.component';
 import { EventEmitter } from 'events';
 import { ICurso } from '../../model/interfaces/icurso';
@@ -10,16 +10,21 @@ import { ICurso } from '../../model/interfaces/icurso';
 })
 export class ListadoCursoComponent implements OnInit {
 
-  @Output() ListaCursos: Array<ICurso>;
+  @Input() ListaCursos: Array<ICurso>;
+  @Output() lista:Array<ICurso> = [];
+  
+  @ViewChild(CursoComponent)  hijo:CursoComponent;
+
   constructor() {
       this.ListaCursos = [];
    }
 
   ngOnInit() {
+    this.lista =  this.ListaCursos;
   }
   
   MostrarCursos() {
-    console.log('hola');
+    console.log( "Listado Component->" + this.ListaCursos[0].curso);
     
   }
 }
