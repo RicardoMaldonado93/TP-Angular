@@ -10,6 +10,7 @@ import { CursoComponent } from './feature/curso-item/curso-item.component';
 import { AppRoutesModule } from './app-routes.module';
 import { MenuComponent } from './core/menu/menu.component';
 import { DocenteComponent } from './shared/docente/docente.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { DocenteComponent } from './shared/docente/docente.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutesModule
+    AppRoutesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
