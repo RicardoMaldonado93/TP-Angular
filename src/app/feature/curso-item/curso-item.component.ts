@@ -1,6 +1,10 @@
-import { Component, Input, Output, EventEmitter, HostBinding, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostBinding, OnInit, Query } from '@angular/core';
 import { ICurso } from '../../model/interfaces/icurso';
 import { EnumEstado } from '../../model/enums/enum-estado.enum';
+import { ActivatedRoute } from '@angular/router';
+import { CursoService } from 'src/app/core/service/curso.service';
+
+
 
 @Component({
   selector: 'app-curso-item',
@@ -19,11 +23,21 @@ export class CursoComponent implements ICurso{
   laboratorio: number;
   estado: number;
 
+  item:ICurso;
+
   @Input() unCurso : ICurso;
   @Output() actualizarEstado : EventEmitter<EnumEstado> = new EventEmitter<EnumEstado>();
   @HostBinding('class.titulo') cardHeaderColor : Boolean = false;
   
-  constructor( ) { 
+  constructor( private ActivateRoute : ActivatedRoute, private servicio:CursoService ) { 
+  }
+
+  ngOnInit(){
+     
+      const id = +this.ActivateRoute.snapshot.params['id'];
+      console.log(id);
+      this.unCurso = this.servicio.getUnCurso(id);
+
   }
 
   Onclick($value){

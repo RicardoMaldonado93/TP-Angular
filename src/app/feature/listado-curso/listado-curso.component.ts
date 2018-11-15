@@ -1,7 +1,8 @@
 import { Component, Output, Input } from '@angular/core';
 import { ICurso } from '../../model/interfaces/icurso';
 import { CursoService } from '../../core/service/curso.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
+import { query } from '@angular/core/src/render3/query';
 
 @Component({
   selector: 'app-listado-curso',
@@ -15,7 +16,6 @@ export class ListadoCursoComponent {
   @Output() lista:Array<ICurso> = [];
 
   public id: string;
-  public item : ICurso;
 
 
   constructor(private route: ActivatedRoute, private r:Router, private service: CursoService ) {
@@ -23,17 +23,18 @@ export class ListadoCursoComponent {
       params =>this.id = params['id']
     );
     
+    this.route.queryParams.subscribe( query => query = this.ListaCursos);
    }
 
   ngOnInit() {
   
-   this.service.getCurso().subscribe( resp => { this.ListaCursos = resp.body; });
+   this.service.getCurso().subscribe( resp => { this.ListaCursos = resp.body ; console.log(resp.body) });
 
 
   }
   
   onSelect(param){
     
-    this.r.navigate(['/curso', param.id]);
+    this.r.navigate(['/curso', param]);
   }
 }
