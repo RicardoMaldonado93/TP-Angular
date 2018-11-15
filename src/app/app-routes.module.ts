@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CursoModuleModule  } from './feature/curso-module/curso-module.module';
 import { AlumnoComponent } from './shared/alumno/alumno.component';
@@ -21,6 +21,11 @@ const ROUTES: Routes = [
     RouterModule.forRoot( ROUTES ),
   ],
 
+  providers:[{
+          provide : LocationStrategy,
+          useClass : HashLocationStrategy
+  }],
+  
   exports: [ RouterModule ]
 })
 export class AppRoutesModule { }

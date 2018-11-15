@@ -3,20 +3,18 @@ import { DatePipe } from "@angular/common";
 
 export interface ICurso {
 
-    id:number;
+    /*id:number;
     curso:string;
     inicio:Date;
     finalizacion: Date;
     estado:EnumEstado;
-    profesor:string;
-}/*
-interface RootObject {
-  id: number;
-  titulo: string;
-  fechaInicio: number;
-  fechaFin: number;
-  asistentes: string[];
-  profesor: string[];
-  laboratorio: number;
-  estado: number;
-}*/
+    profesor:string;*/
+    id: number;
+    titulo: string;
+    fechaInicio: number;
+    fechaFin: number;
+    asistentes: string[];
+    profesor: string[];
+    laboratorio: number;
+    estado: number;
+}

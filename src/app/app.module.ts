@@ -24,7 +24,7 @@ import { CursoService } from './core/service/curso.service';
     DocenteComponent,
     CursoComponent,
     MenuComponent, 
-    HttpClientModule
+   
   ],
   imports: [
     BrowserModule,
