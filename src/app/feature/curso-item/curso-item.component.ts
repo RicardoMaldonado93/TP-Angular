@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, HostBinding, OnInit } from '@angular/core';
 import { ICurso } from '../../model/interfaces/icurso';
 import { EnumEstado } from '../../model/enums/enum-estado.enum';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-curso-item',
@@ -23,9 +24,14 @@ export class CursoComponent implements ICurso{
   @Output() actualizarEstado : EventEmitter<EnumEstado> = new EventEmitter<EnumEstado>();
   @HostBinding('class.titulo') cardHeaderColor : Boolean = false;
   
-  constructor( ) { 
-  }
 
+  constructor ( private route: ActivatedRoute){}
+
+
+  ngOnInit(){
+      let index = parseInt(this.route.snapshot.paramMap.get('id'));
+      this.id= index;
+  }
   Onclick($value){
     this.actualizarEstado.emit($value);
     if($value == 2 ){
@@ -38,4 +44,5 @@ export class CursoComponent implements ICurso{
     
     
   }
+
 }

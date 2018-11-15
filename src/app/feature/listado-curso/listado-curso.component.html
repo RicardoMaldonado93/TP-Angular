@@ -1,2 +1,10 @@
-<p>asdasds</p>
-<span *ngFor="let curso of _sevice">{{curso.titulo}}</span>
+<div style="align-self: center ">
+    <div class= 'card' style="height:auto;">
+            <div class ='card-header bg-light' ><h2>Listado de Cursos</h2></div>
+            <div class='card-body card-columns' style="font-size: 18px">
+                <li *ngFor="let curso of ListaCursos">
+                    <span (click)="onSelect(curso)">{{ curso.titulo  }}</span>
+                </li>
+            </div>
+    </div>
+</div>

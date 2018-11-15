@@ -1,14 +1,16 @@
-  <div class= 'card' style="height:145px;">
-    <div class ='card-header bg-light' ><h2>{{curso}}</h2></div>
+  <div class= 'card' style="height:auto; font-size: 19px;">
+    <div class ='card-header bg-light' ><h2>{{id}}</h2></div>
     <div class='card-body'>
-      <li>ID: {{id}} </li>
-      <li>Fecha de Inicio: {{inicio | date : 'dd/mm/yy'}}</li>
-      <li>Fecha de finalizacion: {{finalizacion | date : 'dd/mm/yy' }}</li>
-      <li>Estado: <select style="height:25px;" (change) = 'Onclick($event.target.value);'>
-                  <option [value] = 1 >Activo</option>
-                  <option [value] = 2 >Inactivo</option>
-                  <option [value] = 3 >Pendiente</option>
-              </select></li>
-    </div>
+      <li *ngFor="let curso of unCurso">
+
+          <span>ID: {{curso.id}} </span>
+  
+          <span>Laboratorio: {{curso.laboratorio}}</span>
+          <span>Fecha de Inicio: {{curso.fechaInicio | date : 'dd/mm/yy'}} </span>
+          <span>Fecha de finalizacion: {{curso.fechaFin | date : 'dd/mm/yy' }}</span>
+     
+          
+      </li>
+      </div>
 </div>
   

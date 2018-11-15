@@ -20,14 +20,10 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'TP-Angular';
 
-  public unAlumno:IAlumno;
-  public unDocente:IDocente;
-  public unCurso:ICurso;
-
   constructor( private route: Router){               
   }
 
-  
+  /*
   ActualizarEstado(estado:EnumEstado):void{
     //this.unCurso.estado = estado;
     //console.log("Estado del Curso: "+ estado );
@@ -40,5 +36,5 @@ export class AppComponent {
   public onButtonClick(): void{
     this.route.navigate(['/curso',1]);
   }
-  
+  */
 }

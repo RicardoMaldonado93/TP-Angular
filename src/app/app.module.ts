@@ -11,6 +11,7 @@ import { AppRoutesModule } from './app-routes.module';
 import { MenuComponent } from './core/menu/menu.component';
 import { DocenteComponent } from './shared/docente/docente.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CursoService } from './core/service/curso.service';
 
 
 @NgModule({

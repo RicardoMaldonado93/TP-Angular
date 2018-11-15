@@ -1,38 +1,38 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
-import { CursoComponent } from '../curso-item/curso-item.component';
-import { EventEmitter } from 'events';
+import { Component, Output, Input } from '@angular/core';
 import { ICurso } from '../../model/interfaces/icurso';
 import { CursoService } from '../../core/service/curso.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-listado-curso',
   templateUrl: './listado-curso.component.html',
-  styleUrls: ['./listado-curso.component.css']
+  styleUrls: ['./listado-curso.component.css'],
+  providers:[CursoService]
 })
-export class ListadoCursoComponent implements OnInit {
+export class ListadoCursoComponent {
 
-  @Output() ListaCursos;
+  @Input() ListaCursos:Array<ICurso>;
   @Output() lista:Array<ICurso> = [];
-  public service: CursoService;
 
   public id: string;
-  public item : ICurso;
+  public Cursos : ICurso;
 
-  constructor(private route: ActivatedRoute, private items: CursoService ) {
+
+  constructor(private route: ActivatedRoute, private r:Router, private service: CursoService ) {
     this.route.params.subscribe(
-      params => this.id = params['id']
+      params =>this.id = params['id']
     );
-      
+    
    }
 
   ngOnInit() {
-    console.log( this.service.getCurso().subscribe(data =>{ this.item= data;}));
+  
+   this.service.getCurso().subscribe( resp => { this.ListaCursos = resp.body; });
+
   }
   
-  MostrarCursos() {
-    console.log( "Listado Component->" + this.ListaCursos);
+  onSelect(param){
     
-    
+    this.r.navigate(['/curso', param.id]);
   }
 }
