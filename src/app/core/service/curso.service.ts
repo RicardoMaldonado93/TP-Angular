@@ -11,17 +11,19 @@ import { Observable } from 'rxjs';
 
 export class CursoService {
 
-  item: ICurso;
-  private URL:string = 'http://demo3744158.mockable.io/cursos';
 
-  constructor( private http: HttpClient ) {
-    
+  item: Observable<HttpResponse<ICurso>>;
+  private URL:string = 'http://demo3744158.mockable.io/cursos';
+  
+   constructor( private http: HttpClient ) {
+     
    }
    
-  getCurso(param?):Observable<HttpResponse<ICurso[]>>{
-
-    return this.http.get<ICurso[]>(this.URL, {observe:'response'});
+  getCurso(): Observable<HttpResponse<ICurso[]>>{
+    return  this.http.get<ICurso[]>(this.URL, { observe : 'response'});
   }
-
+   getUnCurso(param:number):Observable<HttpResponse<ICurso[]>>{
+    return this.http.get<ICurso[]>(this.URL, { observe : 'response'});
+  }
   
 }

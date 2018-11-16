@@ -1,16 +1,31 @@
-  <div class= 'card' style="height:auto; font-size: 19px;">
-    <div class ='card-header bg-light' ><h2>{{id}}</h2></div>
-    <div class='card-body'>
-      <li *ngFor="let curso of unCurso">
+<div class=" col-xl-12 row ">
+      <div class=" col-xl-6 ">
+        <div class=' card ' style=" height : auto ; ">
+          <h2 class="card-header"> {{unCurso.titulo}} </h2>
+          <div class='card-body' style=" font-size : 15px ">
 
-          <span>ID: {{curso.id}} </span>
-  
-          <span>Laboratorio: {{curso.laboratorio}}</span>
-          <span>Fecha de Inicio: {{curso.fechaInicio | date : 'dd/mm/yy'}} </span>
-          <span>Fecha de finalizacion: {{curso.fechaFin | date : 'dd/mm/yy' }}</span>
-     
-          
-      </li>
+            <li> ID: {{unCurso.id}} </li>
+            <Li> Profesor: <a routerLink=" [ '/docente',unCurso.profesor.id] "> {{unCurso.profesor.nombre}} </a>
+            <li> Laboratorio: {{unCurso.laboratorio}} </li>
+            <li> Fecha de inicio: {{unCurso.fechaInicio | date}} </li>
+            <li> Fecha de finalización: {{unCurso.fechaFin | date}} </li>
+            <li> Estado: </li>
+
+          </div>
+        </div>
+      </div>
+
+      <div class=" col-xl-6 ">
+        <div class=' card ' style=" height : auto ; ">
+          <h2 class=" card-header   "> Asistentes </h2>
+
+          <div class=' card-body ' style=" font-size : 15px ">
+
+            <span *ngFor="let a of unCurso.asistentes">
+              <li> {{a}} </li>
+            </span>
+
+          </div>
+        </div>
       </div>
 </div>
-  
