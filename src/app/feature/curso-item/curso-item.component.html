@@ -1,14 +1,36 @@
-  <div class= 'card' style="height:145px;">
-    <div class ='card-header bg-light' ><h2>{{id}}</h2></div>
-    <div class='card-body'>
-      <li>ID: {{unCurso.titulo}} </li>
-      <li>Fecha de Inicio: {{inicio | date : 'dd/mm/yy'}}</li>
-      <li>Fecha de finalizacion: {{finalizacion | date : 'dd/mm/yy' }}</li>
-      <li>Estado: <select style="height:25px;" (change) = 'Onclick($event.target.value);'>
-                  <option [value] = 1 >Activo</option>
-                  <option [value] = 2 >Inactivo</option>
-                  <option [value] = 3 >Pendiente</option>
-              </select></li>
+<div class="col-xl-12 row">
+  <div class="col-xl-6">
+  <div class= 'card ' style="height:auto;">
+
+    <h2 class=" card-header  ">{{unCurso.titulo}}</h2>
+
+    <div class='card-body' style="font-size: 15px">
+      
+      <li>ID: {{unCurso.id}}</li>
+      <li>Profesor: <a routerLink="['/docente',unCurso.profesor.id]">{{unCurso.profesor.nombre}}</a> </li> 
+      <li>Laboratorio: {{unCurso.laboratorio}}</li>
+      <li>Fecha de Inicio:  {{unCurso.fechaInicio | date}}</li>
+      <li>Fecha de finalizacion:  {{unCurso.fechaFin | date }}</li>
+      <li>Estado:</li>
+
+     
     </div>
+  </div>
 </div>
+
+<div class="col-xl-6">
+  <div class= 'card ' style="height:auto;">
+
+      <h2 class=" card-header  ">Asistentes</h2>
+  
+      <div class='card-body' style="font-size: 15px">
+       
+        <span *ngFor="let a of unCurso.asistentes"><li>{{a}}</li></span>
+       
+      </div>
+  </div>
+
+</div>
+</div>
+
   

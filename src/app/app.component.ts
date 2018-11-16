@@ -19,18 +19,19 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'TP-Angular';
 
+  unCurso:CursoComponent;
 
   constructor( private route: Router){               
   }
 
   
   ActualizarEstado(estado:EnumEstado):void{
-    //this.unCurso.estado = estado;
+    this.unCurso.estado = estado;
     //console.log("Estado del Curso: "+ estado );
   }
 
   public actualizarEstado($event):void {
-   // this.unCurso.estado = <EnumEstado>$event;
+    this.unCurso.estado = <EnumEstado>$event;
   }
 
   public onButtonClick(): void{

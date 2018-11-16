@@ -1,5 +1,5 @@
 export enum EnumEstado {
-    Pendiente = 'Pendiente',
-    Activo = 'Activo',
-    Inactivo = 'Inactivo'
+    Pendiente = 0 ,
+    Activo = 1,
+    Inactivo = 2
 }

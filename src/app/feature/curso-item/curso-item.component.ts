@@ -23,20 +23,33 @@ export class CursoComponent implements ICurso{
   laboratorio: number;
   estado: number;
 
-  item:ICurso;
 
   @Input() unCurso : ICurso;
   @Output() actualizarEstado : EventEmitter<EnumEstado> = new EventEmitter<EnumEstado>();
   @HostBinding('class.titulo') cardHeaderColor : Boolean = false;
   
   constructor( private ActivateRoute : ActivatedRoute, private servicio:CursoService ) { 
+    
   }
 
   ngOnInit(){
+
+    this.unCurso = { 
+      id: 0,
+      titulo: '',
+      fechaInicio: 0,
+      fechaFin: 0,
+      asistentes: [],
+      profesor: [],
+      laboratorio: 0,
+      estado: 0,
+    
+    }
      
-      const id = +this.ActivateRoute.snapshot.params['id'];
-      console.log(id);
-      this.unCurso = this.servicio.getUnCurso(id);
+      this.ActivateRoute.paramMap.subscribe( params => {
+         let id = +params.get('id');
+         this.servicio.getUnCurso(id).subscribe(data => { this.unCurso = data.body.find( a => a.id == id), console.log(data)} );
+      })
 
   }
 

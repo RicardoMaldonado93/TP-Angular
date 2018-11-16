@@ -30,7 +30,6 @@ export class ListadoCursoComponent {
   
    this.service.getCurso().subscribe( resp => { this.ListaCursos = resp.body ; console.log(resp.body) });
 
-
   }
   
   onSelect(param){
