@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, HostBinding, OnInit } from '@angular/core';
 import { ICurso } from '../../model/interfaces/icurso';
 import { EnumEstado } from '../../model/enums/enum-estado.enum';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CursoService } from 'src/app/core/service/curso.service';
 
 @Component({
@@ -26,7 +26,7 @@ export class CursoComponent implements ICurso{
   @HostBinding('class.titulo') cardHeaderColor : Boolean = false;
   
 
-  constructor ( private route: ActivatedRoute, private servicio: CursoService){}
+  constructor ( private ActivatedRoute: ActivatedRoute, private servicio: CursoService, private route : Router){}
 
 
   ngOnInit(){
@@ -42,9 +42,9 @@ export class CursoComponent implements ICurso{
     
     }
      
-      this.route.paramMap.subscribe( params => {
+      this.ActivatedRoute.paramMap.subscribe( params => {
          let id = +params.get('id');
-         this.servicio.getUnCurso(id).subscribe(data => { this.unCurso = data.body.find( a => a.id == id), console.log(data)} );
+         this.servicio.getUnCurso(id).subscribe(data => { this.unCurso = data.body.find( a => a.id == id), console.log(this.unCurso)} );
       })
 
   }
@@ -61,4 +61,12 @@ export class CursoComponent implements ICurso{
     
   }
 
+  navegar($param:number){
+ 
+  }
+
+  listadoProfesor(){
+    console.log("estoy en metodo listado peofesor "+ this.profesor);
+      return this.profesor;
+   }
 }

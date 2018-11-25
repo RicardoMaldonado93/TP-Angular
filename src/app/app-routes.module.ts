@@ -11,8 +11,8 @@ const ROUTES: Routes = [
                           { path:"alumno", component: AlumnoComponent},
                           { path:"curso/:id", component: CursoComponent},
                           { path:"cursos", component: ListadoCursoComponent },
-                          { path:"docente", component: DocenteComponent},
-                          { path: '**', redirectTo: '' },
+                          { path:"docente/:id", component: DocenteComponent},
+                          //{ path: '**', redirectTo: '' },
                         ]; 
 
 @NgModule({

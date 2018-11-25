@@ -5,7 +5,7 @@
           <div class='card-body' style=" font-size : 15px ">
 
             <li> ID: {{unCurso.id}} </li>
-            <Li> Profesor: <a routerLink=" [ '/docente',unCurso.profesor.id] "> {{unCurso.profesor.nombre}} </a>
+            <Li> Profesor: <a [routerLink]="['/docente',unCurso.profesor.id]"> {{unCurso.profesor.nombre}} </a>
             <li> Laboratorio: {{unCurso.laboratorio}} </li>
             <li> Fecha de inicio: {{unCurso.fechaInicio | date}} </li>
             <li> Fecha de finalización: {{unCurso.fechaFin | date}} </li>
