@@ -9,7 +9,12 @@
             <li> Laboratorio: {{unCurso.laboratorio}} </li>
             <li> Fecha de inicio: {{unCurso.fechaInicio | date}} </li>
             <li> Fecha de finalización: {{unCurso.fechaFin | date}} </li>
-            <li> Estado: </li>
+            <li> Estado: <select (ngModel)='unCurso.estado' (change)='Onclick($event.target.value);'> 
+                            <option value=0>Pendiente</option> 
+                            <option value=1>Activo</option>
+                            <option value=2>Inactivo</option>  
+                        </select> 
+            </li>
 
           </div>
         </div>

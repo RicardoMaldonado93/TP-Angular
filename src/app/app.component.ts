@@ -32,9 +32,6 @@ export class AppComponent {
   public actualizarEstado($event):void {
    // this.unCurso.estado = <EnumEstado>$event;
   }
-
-  public onButtonClick(): void{
-    this.route.navigate(['/curso',1]);
-  }
+  
   */
 }

@@ -48,7 +48,9 @@ export class CursoComponent implements ICurso{
       })
 
   }
+
   Onclick($value){
+    console.log($value);
     this.actualizarEstado.emit($value);
     if($value == 2 ){
       this.cardHeaderColor = true ;
@@ -61,12 +63,5 @@ export class CursoComponent implements ICurso{
     
   }
 
-  navegar($param:number){
- 
-  }
 
-  listadoProfesor(){
-    console.log("estoy en metodo listado peofesor "+ this.profesor);
-      return this.profesor;
-   }
 }
