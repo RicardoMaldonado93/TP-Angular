@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output} from '@angular/core';
 import { IAlumno } from '../../model/interfaces/ialumno';
 import { ActivatedRoute, Params } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-alumno',
@@ -9,18 +10,29 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class AlumnoComponent implements OnInit {
 
-  @Input() unAlumno:IAlumno;
-  alumno : { nombre:string};
+  //@Input() unAlumno:IAlumno;
+  //alumno : { nombre:string};
+  formulario:FormGroup;
 
-  constructor( private _route : ActivatedRoute ) { 
+  constructor( private _route : ActivatedRoute, private fb:FormBuilder ) { 
        
+    this.formulario = fb.group({
+      nombre:[null, Validators.required],
+      apellido:[null, Validators.required],
+      fecha_de_Nacimiento :[null, Validators.required],
+      tipo_doc:[null, Validators.required],
+      nro_doc: [null, Validators.compose([Validators.required, Validators.maxLength(8)])],
+      comunidad:[null],
+      leg_utn:[null, Validators.required],
+      ins_curso:[null, Validators.required],
+    })
   }
 
   ngOnInit() {
-    this.alumno = { nombre : this._route.snapshot.params.nombre};
+   /* this.alumno = { nombre : this._route.snapshot.params.nombre};
     this._route.params.subscribe( (params : Params) =>{ this.alumno.nombre = params.nombre;}  )
     console.log( this.alumno.nombre);
-    console.log ( this.alumno , this.unAlumno);
+    console.log ( this.alumno , this.unAlumno);*/
   }
 
 }
