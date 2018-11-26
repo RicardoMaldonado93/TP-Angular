@@ -19,12 +19,12 @@ export class AlumnoComponent implements OnInit {
     this.formulario = fb.group({
       nombre:[null, Validators.required],
       apellido:[null, Validators.required],
-      fecha_de_Nacimiento :[null, Validators.required],
+      fecha_nacimiento :[null, Validators.required],
       tipo_doc:[null, Validators.required],
       nro_doc: [null, Validators.compose([Validators.required, Validators.maxLength(8)])],
       comunidad:[null],
       leg_utn:[null, Validators.required],
-      ins_curso:[null, Validators.required],
+      curso:[null, Validators.required],
     })
   }
 
